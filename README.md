@@ -1,8 +1,8 @@
 # Customer Segmentation using RFM Model
 
-**CRM Analytics Dashboard | Excel + Python Portfolio Project**
+**CRM Analytics Dashboard | Excel Portfolio Project**
 
-> An end-to-end customer segmentation project built using the RFM (Recency · Frequency · Monetary) framework across a 100-customer dataset, delivered as a fully formatted Excel dashboard and a styled PDF recommendations report — both generated programmatically using Python.
+> An end-to-end customer segmentation project built using the RFM (Recency · Frequency · Monetary) framework across a 100-customer dataset, delivered as a fully formatted Excel dashboard and a styled PDF recommendations report.
 
 ---
 
@@ -11,6 +11,7 @@
 This project applies the **RFM Model** — one of the most widely used frameworks in CRM and direct marketing analytics — to segment 100 customers into six behavioural groups. Each segment is profiled across recency of purchase, frequency of transactions, and monetary value, and mapped to targeted marketing and retention strategies.
 
 The deliverable is a **production-ready Excel workbook** with 7 embedded charts, KPI cards, data tables, and strategic insight blocks, alongside a **multi-page PDF report** formatted to professional consulting standards.
+
 
 | Attribute | Detail |
 |---|---|
@@ -46,18 +47,35 @@ The deliverable is a **production-ready Excel workbook** with 7 embedded charts,
 
 ---
 
+# Dashboard
+
+<img width="1918" height="993" alt="P4 O S1" src="https://github.com/user-attachments/assets/0a016422-79ba-461f-bdb8-346a61f9171d" />
+<img width="1918" height="990" alt="P4 O S2" src="https://github.com/user-attachments/assets/d8a51267-32fe-469c-aaf4-8421cf05fea8" />
+<img width="1918" height="990" alt="P4 O S3" src="https://github.com/user-attachments/assets/0331caf3-9bd2-46e3-b1b6-8a9ac32989b0" />
+<img width="1918" height="990" alt="P4 O S4" src="https://github.com/user-attachments/assets/cd4dc4b4-6b40-48e8-b01d-4a24306c1da7" />
+
+---
+
 ## Repository Structure
 
 ```
 rfm-customer-segmentation-excel/
 │
-├── build_rfm_v2.py                        # Excel dashboard builder (openpyxl)
-├── build_rfm_pdf.py                       # PDF report builder (ReportLab)
+├── dashboard/
+|   ├── RFM_Customer_Segmentation_Dashboard.xlsx   # Excel dashboard
+|                      
+├── data/                     
+│   ├── dataset.xlsx                               # Raw dataset of 100 customers
+|
+├── reports/
+│   └── RFM_Recommendations_Report.pdf             # PDF of recommendations
 │
-├── outputs/
-│   ├── RFM_Customer_Segmentation_Dashboard.xlsx
-│   └── RFM_Recommendations_Report.pdf
-│
+├── screenshots/                                   # excel dashboard screenshots
+│   └── dashboard 1.png
+│   └── dashboard 2.png
+│   └── dashboard 3.png
+│   └── dashboard 4.png
+|
 └── README.md
 ```
 
@@ -65,7 +83,7 @@ rfm-customer-segmentation-excel/
 
 ## Excel Dashboard — Sheet Structure
 
-The workbook contains **5 sheets**, opening on the Dashboard.
+The workbook contains **4 sheets**, opening on the Dashboard.
 
 ### 1. Dashboard *(opens by default)*
 - **Title bar** with project name, analysis period, and customer count
@@ -80,16 +98,11 @@ The workbook contains **5 sheets**, opening on the Dashboard.
 - Segment-wise summary: count, revenue, avg RFM score, avg recency, avg orders, avg spend
 - RFM Scoring Framework table mapping score bands to segments and recommended actions
 
-### 3. Customer Data
-- Full 100-row dataset with 18 columns:
-  `Customer ID | Name | Region | Age Group | Gender | Join Date | Last Purchase | Total Orders | Total Purchase | Avg Order | Category | Loyalty | Segment | Recency Days | R Score | F Score | M Score | RFM Total`
-- Alternating row shading, segment-coded font colouring
-
-### 4. Chart Source Data
+### 3. Chart Source Data
 - 7 clean source tables powering all embedded charts
 - Structured with labelled headers and consistent formatting
 
-### 5. Recommendations
+### 4. Recommendations
 - Strategic recommendation matrix: Segment → Priority → Strategy → Action Plan → Expected Outcome → Timeline → KPI → Budget Impact
 
 ---
@@ -112,11 +125,6 @@ All charts are embedded directly in the Dashboard sheet with section banners and
 
 ## PDF Recommendations Report
 
-The PDF is styled to match a professional operations analytics report, with a persistent header and footer on every page.
-
-**Header:** Report name (left) | Confidential · Prepared by · Date (right)  
-**Footer:** Project attribution (left) | Page X of Y (right)
-
 ### Report Sections
 
 | # | Section |
@@ -128,34 +136,6 @@ The PDF is styled to match a professional operations analytics report, with a pe
 | 5 | Methodology |
 | 6 | Implementation Roadmap (4 phases) |
 | 7 | Conclusion with outcome targets |
-
-**Cover page** includes two KPI strip rows (6 metrics) matching the layout of a consulting-style ops report.
-
----
-
-## How to Run
-
-### Prerequisites
-
-```bash
-pip install openpyxl reportlab
-```
-
-### Generate Excel Dashboard
-
-```bash
-python build_rfm_v2.py
-# Output: RFM_Customer_Segmentation_Dashboard.xlsx
-```
-
-### Generate PDF Report
-
-```bash
-python build_rfm_pdf.py
-# Output: RFM_Recommendations_Report.pdf
-```
-
-Both scripts use `random.seed(42)` to ensure the dataset is fully reproducible across runs.
 
 ---
 
@@ -184,16 +164,14 @@ Both scripts use `random.seed(42)` to ensure the dataset is fully reproducible a
 
 | Tool | Purpose |
 |---|---|
-| Python 3 | Data generation and file building |
-| openpyxl | Excel workbook creation, chart embedding, styling |
-| ReportLab | PDF generation with custom page templates |
-| Excel | Final dashboard rendered and viewed in Excel |
+| PDF generation with custom page templates |
+| Excel | Data generation, Final dashboard generation and viewed in Excel |
 
 ---
 
 ## About
 
-Built as a portfolio project by **Debarati** — Equity Research & Financial Modelling Intern at Finance Veda, with a focus on data analytics, financial modelling, and UPSC Civil Services preparation.
+Built by: Debarati
 
 ---
 
